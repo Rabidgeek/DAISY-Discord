@@ -48,7 +48,7 @@ client.on("messageCreate", async function (message) {
   
     } catch (err) {
       return message.reply(
-        "As an AI robot, I errored out over here: "
+        "As an AI robot, I errored out over here: " + str(err)
       );
     }
   });
