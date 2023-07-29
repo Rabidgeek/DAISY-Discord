@@ -13,6 +13,11 @@ const server = app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
+// Route for the root path
+app.get("/", (req, res) => {
+  res.send("Hello, this is your Discord bot!");
+});
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
