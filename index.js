@@ -41,7 +41,3 @@ client.on("messageCreate", async function (message) {
 
   client.login(process.env.BOT_TOKEN);
   
-const port = process.env.PORT || 3000; // Use the assigned PORT or fallback to a default port (e.g., 3000)
-app.listen(port, () => {
-  console.log(`Chatbot is running on port ${port}`);
-});
