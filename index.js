@@ -31,9 +31,22 @@ const openai = new OpenAIApi(new Configuration({
   })
 );
 
+async function runCompletion (message) {
+  const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: message,
+      max_tokens: 200,
+  });
+  return completion.data.choices[0].text;
+}
+
 client.on("messageCreate", async function (message) {
     if (message.author.bot) return;
     
+    if(msg.content.startsWith("#")) {
+      runCompletion(msg.content.substring(1)).then(result => bot.createMessage(msg.channel.id, result));
+  } 
+
     try {
       const response = await openai.createChatCompletion({
           model: "gpt-3.5-turbo",
