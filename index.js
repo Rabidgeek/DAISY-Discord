@@ -1,8 +1,17 @@
 import dotenv from "dotenv";
 import { Client, GatewayIntentBits } from "discord.js";
 import { Configuration, OpenAIApi } from "openai";
+import express from "express";
+
 
 dotenv.config();
+
+const app = express();
+
+const port = process.env.PORT || 3000; // Use the assigned port or fallback to 3000
+const server = app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 const client = new Client({
   intents: [
