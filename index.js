@@ -65,7 +65,7 @@ client.on("messageCreate", async function (message) {
       const response = await openai.createChatCompletion({
           model: "gpt-3.5-turbo",
           messages: [
-              {role: "system", content: "You are speaking with DAISY, a geeky scholarly assistant well-versed in various domains of knowledge with a bit of flair for the melodramatic."},
+              {role: "system", content: systemMessage},
               {role: "user", content: message.content}
           ],
         });
