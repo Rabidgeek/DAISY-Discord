@@ -43,8 +43,8 @@ async function runCompletion (message) {
 client.on("messageCreate", async function (message) {
     if (message.author.bot) return;
     
-    if(msg.content.startsWith("#")) {
-      runCompletion(msg.content.substring(1)).then(result => bot.createMessage(msg.channel.id, result));
+    if(message.content.startsWith("#")) {
+      runCompletion(message.content.substring(1)).then(result => bot.createMessage(message.channel.id, result));
   } 
 
     try {
