@@ -47,11 +47,12 @@ client.on("messageCreate", async function (message) {
       runCompletion(message.content.substring(1)).then(result => bot.createMessage(message.channel.id, result));
   } 
 
+  let systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
+
     try {
-      const systemMessage = message.content.toLowerCase() == "why daisy?"
-      ? "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for \"Doghouse Artificial Intelligence System Yawps\", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building."
-      : "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
-    }
+      if (message.content.toLowerCase() == "why daisy?") {
+        systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for \"Doghouse Artificial Intelligence System Yawps\", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building.";
+      }
 
       if (message.content.toLowerCase() == "what is the doghouse?") {
         // Canned reply for what is the doghouse
