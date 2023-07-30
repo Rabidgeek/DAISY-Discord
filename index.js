@@ -48,10 +48,10 @@ client.on("messageCreate", async function (message) {
   } 
 
     try {
-      if (message.content.toLowerCase() == "why daisy?") {
-        // Canned reply for DAISY name
-        return message.reply("I am Doghouse Artificial Intelligence System Yawps, or DAISY. My creator named me because he knew he needed his own JARVIS, and I would eventually reside in The DogHouse.")
-      }
+      const systemMessage = message.content.toLowerCase() == "why daisy?"
+      ? "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for "Doghouse Artificial Intelligence System Yawps", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building."
+      : "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
+    }
 
       if (message.content.toLowerCase() == "what is the doghouse?") {
         // Canned reply for what is the doghouse
