@@ -50,17 +50,17 @@ client.on("messageCreate", async function (message) {
   let systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
 
     try {
-      if (message.content.toLowerCase() == "why daisy?") {
+      if (message.content.toLowerCase() == "why are you named DAISY? | why are you named daisy?") {
         systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for \"Doghouse Artificial Intelligence System Yawps\", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building.";
       }
 
-      if (message.content.toLowerCase() == "what is the doghouse?") {
+      if (message.content.toLowerCase() == "what is the doghouse? | what is the DogHouse? | what is The DogHouse? | what is the Doghouse? | what is The Doghouse?") {
         // Canned reply for what is the doghouse
         return message.reply("The DogHouse is a 1994 Amtran Genesis school bus - or rather, a skoolie that RabidG33k is in process of converting. It will take him a long time. It basically is a tiny house on wheels.")
       }
 
-      if (message.content.toLowerCase() == "who is rabidg33k?") {
-        return message.reply("RabidG33k is Jesse Ragsdale, who works for Eyeth Studios as an assistant to the wonderful Jane Jonas (in which he takes care of new clients, project agreements, accounting and some website dev work, check us out at eyethstudios.com), and for GoSign.Ai as a software engineer (check us out at http://gosign.ai) Check my human's website at jesseragsdale.com if you dare...!")
+      if (message.content.toLowerCase() == "who is RabidG33k?") {
+        return message.reply("RabidG33k is Jesse Ragsdale, who works for Eyeth Studios as an assistant to the wonderful Jane Jonas (in which he takes care of new clients, project agreements, accounting and some website dev work, check us out at https://eyethstudios.com), and for GoSign.Ai as a software engineer (check us out at https://gosign.ai) Check my human's website at https://jesseragsdale.com if you dare...!")
       }
 
       const response = await openai.createChatCompletion({
