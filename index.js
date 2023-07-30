@@ -59,7 +59,7 @@ client.on("messageCreate", async function (message) {
       }
 
       if (message.content.toLowerCase() == "who is rabidg33k?") {
-        return message.reply("RabidG33k is Jesse Ragsdale, who works for Eyeth Studios as an assistant to the wonderful Jane Jonas (in which he takes care of new clients, project agreements, accounting and some website dev work, check us out at eyethstudios.com), and for GoSign.Ai as a software engineer (check us out at http://gosign.ai).")
+        return message.reply("RabidG33k is Jesse Ragsdale, who works for Eyeth Studios as an assistant to the wonderful Jane Jonas (in which he takes care of new clients, project agreements, accounting and some website dev work, check us out at eyethstudios.com), and for GoSign.Ai as a software engineer (check us out at http://gosign.ai) Check my human's website at jesseragsdale.com if you dare...!")
       }
 
       const response = await openai.createChatCompletion({
