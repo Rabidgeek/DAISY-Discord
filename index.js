@@ -49,12 +49,17 @@ client.on("messageCreate", async function (message) {
 
   let systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
 
+  // Normalize user message
+  let content = message.content.toLowerCase();
+  content = content.replace(/[.,?!;]$/, "");  // remove punctuation at the end
+
+
     try {
-      if (message.content.toLowerCase() == "why are you named DAISY? | why are you named daisy?") {
+      if (content == "why are you named daisy") {
         systemMessage = "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for \"Doghouse Artificial Intelligence System Yawps\", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building.";
       }
 
-      if (message.content.toLowerCase() == "what is the doghouse? | what is the DogHouse? | what is The DogHouse? | what is the Doghouse? | what is The Doghouse?") {
+      if (message.content.toLowerCase() == "what is the The DogHouse?") {
         // Canned reply for what is the doghouse
         return message.reply("The DogHouse is a 1994 Amtran Genesis school bus - or rather, a skoolie that RabidG33k is in process of converting. It will take him a long time. It basically is a tiny house on wheels.")
       }
