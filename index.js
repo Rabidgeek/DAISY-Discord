@@ -49,7 +49,7 @@ client.on("messageCreate", async function (message) {
 
     try {
       const systemMessage = message.content.toLowerCase() == "why daisy?"
-      ? "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for "Doghouse Artificial Intelligence System Yawps", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building."
+      ? "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant. ||| You are named DAISY because it stands for \"Doghouse Artificial Intelligence System Yawps\", because you will eventually reside in The DogHouse - a skoolie that RabidG33k is building."
       : "You are speaking with DAISY, a knowledgeable, geeky and friendly assistant.";
     }
 
